@@ -1,0 +1,50 @@
+﻿using System;
+
+namespace classes_and_structure
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Cars BMW = new Cars();
+            BMW.PrintVehicles();
+
+            //using polymorphysim
+            Bikes Suzuki = new Bikes();
+            Suzuki.PrintVehicles();
+
+        }
+    }
+    // Structs cannot be inherited but classes can be
+    public struct Animals 
+    {
+     public void PrintAnimal()
+        {
+            Console.WriteLine("Hi,There! I am from Animals struct!");
+        }
+    }
+    // Classes can be inherited.
+    public  class Vehicles
+    {
+        public virtual void PrintVehicles()
+        {
+            Console.WriteLine("Hi,There! I am Vehicales class!");
+        }
+    }
+
+    public class Cars : Vehicles 
+    {
+
+    }
+    // Classes support polymorphysm while structs don't
+
+    public class Bikes : Vehicles
+    {
+        public override void PrintVehicles()
+        {
+            Console.WriteLine("Hi,There! I am from Bikes classes where method was changed!");
+        }
+    }
+
+
+}
